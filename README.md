@@ -122,7 +122,7 @@ Now, run Milo equilibration for 15 ps (20 k steps with 0.75 fs step size) at 0.0
 
 In this step, take the final structure from the above run (ideally, perform K-means clustering to obtain the best representative cluster) to initiate energy minimization of the solvents using `UMA`.
 
-Here, minimize only the solvents using `external=gauuma`, keeping the solute frozen and allowing the solvents to freely optimize their positions.
+Here, minimize only the solvents using `external=gauuma`, keeping the `solute frozen` and allowing the solvents to freely optimize their positions.
 
         %mem=24GB
         %nprocs=1
