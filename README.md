@@ -7,37 +7,37 @@ Procedure to run QM/MM Solvent Dynamics using Milo and Gaussian-16/ORCA-6.1
 
 Use the following `job` and `theory` sections to locally initialize Milo for packing the solvents.
 
-  $job
-    api                              aarontools
-    job_type                         equilibration
-    program                          gaussian
-    integration_algorithm            velocity_verlet
-    max_steps                        2
-    current_step                     0
-    step_size                        0.75
-    explicit_solvent                 ACN 200
-    packmol_tolerance                2.7
-    boundary_side_length             16.4
-    boundary_shape                   sphere
-    explicit_solvent                 none
-    frozen                           1
-    temperature                      298.15
-    translations                     none
-    rotations                        none
-    vibrations                       none
-    vibrational_sampling             classical
-    thermostat                       stochastic
-    temperature_coupling_time        500.0
-    temperature_coupling_frequency   1
-    reference_temperature            283.15
-    processors                       12
-    memory                           96
-   random_seed 60636271145
-  $end
-  
-  $theory
-    route                            external=('gau_xtb') 
-  $end
+    $job
+      api                              aarontools
+      job_type                         equilibration
+      program                          gaussian
+      integration_algorithm            velocity_verlet
+      max_steps                        2
+      current_step                     0
+      step_size                        0.75
+      explicit_solvent                 ACN 200
+      packmol_tolerance                2.7
+      boundary_side_length             16.4
+      boundary_shape                   sphere
+      explicit_solvent                 none
+      frozen                           1
+      temperature                      298.15
+      translations                     none
+      rotations                        none
+      vibrations                       none
+      vibrational_sampling             classical
+      thermostat                       stochastic
+      temperature_coupling_time        500.0
+      temperature_coupling_frequency   1
+      reference_temperature            283.15
+      processors                       12
+      memory                           96
+     random_seed 60636271145
+    $end
+    
+    $theory
+      route                            external=('gau_xtb') 
+    $end
 
 After this run, use `python -m milo.setu_restart` to generate a restart input file. 
 
