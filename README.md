@@ -162,3 +162,40 @@ Here, minimize only the solvents using `external=gauuma`, keeping the solute fro
          ...............................................................
 
 
+**Gaussian energy minimization of the *full system* for the ModRed**
+
+In the next step, use ONIOM((ubp86/def2svp em=gd3bj:external='gauuma') to run ModRed of the TS structure using the following input file.
+
+        %chk=PyNMe3+cis-DMC-2Trifl-200ACN-Doublet-BP86D3BJUMA-ModRed.chk
+        %mem=96GB
+        %nprocs=24
+        # opt=(modredundant,maxcycles=500,loose,nomicro) freq
+        oniom(ubp86/def2svp em=gd3bj:external='gauuma') scf=(maxcycles=500,xqc)
+        
+        TS optimization
+        
+        0 2 0 2 0 2
+         Fe               0    1.19406000   -0.90534000    0.41536000 H
+         O                0    1.75154000   -1.01737000    2.26442000 H
+         N                0   -0.40681000   -0.12387000    1.28688000 H
+         C                0   -1.47378000   -0.90441000    1.55209000 H
+         O                0    2.40619000   -1.86372000   -0.15395000 H
+         N                0    1.84171000    1.05444000    0.52589000 H
+         C                0   -2.63945000   -0.34993000    2.09349000 H
+         H                0   -3.52867000   -0.98016000    2.24018000 H
+         N                0    0.42735000   -0.35977000   -1.42992000 H
+         C                0   -2.64505000    1.02662000    2.37915000 H
+         H                0   -3.55859000    1.49770000    2.77219000 H
+         N                0   -0.15643000   -2.53371000    0.26272000 H
+         C                0   -1.48896000    1.80243000    2.18685000 H
+         H                0   -1.45828000    2.87988000    2.40744000 H
+         C                0    2.34274000   -1.99768000    2.90623000 H
+         C                0   -0.35647000    1.17601000    1.65238000 H
+         C                0    1.02323000    1.75119000    1.57615000 H
+         H                0    1.50518000    1.54472000    2.55322000 H
+         H                0    1.04545000    2.84548000    1.39708000 H
+         C                0    3.27478000    1.14100000    0.90510000 H
+
+
+**Gaussian OPTTS calculation using the ModRed**
+
