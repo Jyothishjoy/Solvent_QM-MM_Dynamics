@@ -164,7 +164,7 @@ Here, minimize only the solvents using `external=gauuma`, keeping the `solute fr
 
 **Gaussian energy minimization of the *full system* for the ModRed**
 
-In the next step, use ONIOM((ubp86/def2svp em=gd3bj:external='gauuma') to run ModRed of the TS structure using the following input file.
+In the next step, use `ONIOM((ubp86/def2svp em=gd3bj:external='gauuma')` to run ModRed of the TS structure using the following input file.
 
         %chk=PyNMe3+cis-DMC-2Trifl-200ACN-Doublet-BP86D3BJUMA-ModRed.chk
         %mem=96GB
