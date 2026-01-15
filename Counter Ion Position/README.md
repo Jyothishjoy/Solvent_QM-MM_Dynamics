@@ -33,13 +33,13 @@ Given an approximate starting configuration, GOAT algorith implimented in ORCA 6
 
 After the Goat calculation, along with the global minimum structure, we get a file named `GOAT_temp.finalensemble.xyz`.
 
-This file contains all the potential conformations GOAT found. We can use K-Means clsutering implimented in AMBERTools to generate 10 potential structures (https://github.com/Jyothishjoy/Fe-Silylation/tree/main/K_Means_Clustering)
+This file contains all the potential conformations GOAT found. We can use K-Means clustering implemented in AMBERTools to generate 10 potential structures (https://github.com/Jyothishjoy/Fe-Silylation/tree/main/K_Means_Clustering)
 
-I used WSL2 for this step. Convert xyz file to pdb using the following command.
+I used WSL2 for this step. Convert `xyz` file to `pdb` using the following command.
 
     babel -i xyz GOAT_temp.finalensemble.xyz -O GOAT_temp.finalensemble.pdb
 
-Then use mol_2_cluster.in file with cpptraj to geenerate 10 representative clusters.
+Then use `mol_2_cluster.in` file with cpptraj to generate 10 representative clusters.
 
     parm GOAT_temp.finalensemble.pdb
     trajin GOAT_temp.finalensemble.pdb
@@ -55,3 +55,8 @@ Then use mol_2_cluster.in file with cpptraj to geenerate 10 representative clust
       singlerepout singlerep.nc singlerepfmt netcdf \
       avgout avg avgfmt pdb
     run 
+
+
+### DFT optimization of 10 Clusters
+
+Use DFT to optimize the 10 representative clusters to identify the structure that best represents the counterion position.
