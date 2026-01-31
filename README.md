@@ -46,7 +46,7 @@ Execute the following two lines for the MPI run.
 
 Submit the job using the following command `python -m milo input.inp -e g16 > output.out &`
 
-After this run, use `python -m milo.setu_restart` to generate a restart input file. 
+After this run, use `python -m milo.setup_restart` to generate a restart input file. 
 
 **Restart-I-298.15K**
 
