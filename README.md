@@ -39,6 +39,13 @@ Use the following `job` and `theory` sections to locally initialize Milo for pac
       route                            external=('gau_xtb') 
     $end
 
+Execute the following two lines for the MPI run.
+
+        export OMP_NUM_THREADS=12
+        export OMP_STACKSIZE=4G
+
+Submit the job using the following command `python -m milo input.inp -e g16 > output.out &`
+
 After this run, use `python -m milo.setu_restart` to generate a restart input file. 
 
 **Restart-I-298.15K**
