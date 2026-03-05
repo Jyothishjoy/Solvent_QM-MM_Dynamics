@@ -1,6 +1,10 @@
 # Solvent_QM-MM_Dynamics
 Procedure to run QM/MM Solvent Dynamics using Milo and Gaussian-16/ORCA-6.1
 
+## Step-O: Packmol Volume Guesser
+
+Use volume guesser (https://m3g.github.io/packmol/nmols.shtml) to calculate the `boundary_side_length` for the equilibration input.
+
 ## Step-I: Packing the TS structure with Solvents and Equilibration
 
 **Local Initialization**
